@@ -1,0 +1,78 @@
+
+version: 2
+
+models:
+  - name: stg_airtable_attendance
+    description: "Attendance records for members at Code for San Francisco"
+
+    columns: 
+      - name: att_record_id
+      - name: att_email
+        description: "Email address associated with the attendance"
+        tests: 
+          - not_null
+      - name: att_date
+        description: "Date of the attendance"
+        tests:
+          - not_null
+          #is date
+          # > whatever
+          # < future
+      - name: att_purpose
+        description: "Why someone attedended, to work on a project, attend an event, etc."
+      - name: att_product_key
+        description: "Key associated with the product in airtable"
+      - name: att_volunteer_hours
+        description: "Estimated number of self-reported volunteer hours over previous week"
+      - name: att_location
+        description: "Whether attendance was remote or in-person"
+
+  - name: stg_airtable_members
+    description: "Attendance records for members at Code for San Francisco"
+
+    columns: 
+      - name: memb_full_name
+        description: "Full Name, free text"
+    columns:
+      - name: memb_email
+        description: "Member email address"
+        tests:
+          - unique
+      - name: memb_timestamp
+        description: "Date membership form was submitted"
+        tests: 
+          - not_null
+      - name: memb_referral
+        description: "How the member found Code for San Francisco"
+        tests:
+          - not_null
+          #is date
+          # > whatever
+          # < future
+      - name: memb_goal
+        description: "What the member hopes to get from their involvement"
+      - name: memb_involvement_type
+        description: "How the member hopes to be involved"
+      - name: memb_linkedin_url
+        description: "URL for member's linkedin account"
+      - name: memb_profession
+        description: "Member's profession"
+      - name: memb_company
+        description: "Member's company"
+      - name: memb_role_list
+        description: "List of roles member is interested in"
+      - name: memb_tech_list
+        description: "List of tech members knows"
+      - name: memb_interest_list
+        description: "List of member's interests"
+      - name: memb_exp_level
+        description: "Self-assessed experience level of member."
+      - name: memb_gender
+        description: "Gender"
+      - name: memb_race_ethnicity
+        description: "Race/Ethnicity"
+      - name: memb_income_range
+        description: "Income Range"
+      - name: memb_age_range
+        description: "Age Range"
+
