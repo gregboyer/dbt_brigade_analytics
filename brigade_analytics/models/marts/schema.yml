@@ -1,0 +1,7 @@
+
+version: 2
+
+models:
+  - name: attendance_by_member
+    description: "View of attendance data by member"
+
