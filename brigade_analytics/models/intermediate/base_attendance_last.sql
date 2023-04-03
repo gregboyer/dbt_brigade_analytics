@@ -3,8 +3,6 @@
     Create intermediate data from airtable attendance form data representing the first time someone joined. 
 */
 
-{{ config(materialized='table') }}
-
 with source_data as (
     select
         att_email
