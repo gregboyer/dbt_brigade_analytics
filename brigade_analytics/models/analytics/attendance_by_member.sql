@@ -3,8 +3,6 @@
     Create intermediate data from airtable attendance form data representing the first time someone joined. 
 */
 
-{{ config(materialized='table') }}
-
 with attendance_summary as (
     select *
     from base_attendance_summary
@@ -20,7 +18,6 @@ with attendance_summary as (
     from base_attendance_last
     )
 
-
 ,results as (
     select
         a.att_email
@@ -28,8 +25,8 @@ with attendance_summary as (
         ,cnt_attendance
         ,cnt_attendance_in_person
         ,cnt_attendance_remote
-        ,sum_hours_in_person
-        ,sum_hours_remote
+        ,hours_in_person
+        ,hours_remote
         ,att_first_attendance_dt
         ,att_first_location
         ,att_last_attendance_dt

@@ -1,0 +1,1 @@
+{{ codegen.generate_source('brigade_analytics') }}

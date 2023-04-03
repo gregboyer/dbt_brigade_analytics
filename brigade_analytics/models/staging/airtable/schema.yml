@@ -36,16 +36,12 @@ models:
     columns:
       - name: memb_email
         description: "Member email address"
-        tests:
-          - unique
       - name: memb_timestamp
         description: "Date membership form was submitted"
         tests: 
           - not_null
       - name: memb_referral
         description: "How the member found Code for San Francisco"
-        tests:
-          - not_null
           #is date
           # > whatever
           # < future

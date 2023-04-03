@@ -3,18 +3,16 @@
     Create staging data from airtable attendance form data
 */
 
-{{ config(materialized='table') }}
-
-with source_data as (
-
+with source_data as
+(
     select
-        formula as "att_record_id"
-        ,"What brings you here?" as "att_purpose"
-        ,"Product Name" as "att_product_key"
-        ,"Email" as "att_email"
-        ,cast("Date" as date) as "att_date"
-        ,cast("About how many hours did you volunteer last week? " as int) as "att_volunteer_hours"
-        ,"In Person or Remote?" as "att_location"
+        record as "att_record_id"
+        ,reason as "att_purpose"
+        ,project as "att_product_key"
+        ,email as "att_email"
+        ,cast(date as date) as "att_date"
+        ,cast("volunteerHrsCnt" as int) as "att_volunteer_hours"
+        ,location as "att_location"
     from sources.airtable_attendance
 )
 
