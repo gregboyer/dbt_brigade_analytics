@@ -5,17 +5,17 @@
 
 with attendance_summary as (
     select *
-    from base_attendance_summary
+    from {{ref('base_attendance_summary')}}
     )
 
 ,attendance_first as (
     select *
-    from base_attendance_first
+    from {{ref('base_attendance_first')}}
     )
 
 ,attendance_last as (
     select *
-    from base_attendance_last
+    from {{ref('base_attendance_last')}}
     )
 
 ,results as (

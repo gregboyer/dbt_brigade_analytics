@@ -9,7 +9,7 @@ with source_data as (
         ,att_location
         ,att_date
         ,att_volunteer_hours
-    from stg_airtable_attendance
+    from {{ref('stg_airtable_attendance')}}
 )
 ,result as (
     select

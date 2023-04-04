@@ -5,6 +5,6 @@ models:
   - name: base_attendance_first
     description: "Create intermediate data from airtable attendance form data representing the first time someone joined. "
   - name: base_attendance_last
-    description: "Create intermediate data from airtable attendance form data representing the first time someone joined. "
+    description: "Create intermediate data from airtable attendance form data representing the most recent time someone joined. "
   - name: base_attendance_summary
-    description: "Create intermediate data from airtable attendance form data representing the first time someone joined. "
+    description: "Create intermediate data from airtable attendance form data representing total attendance by member. "
