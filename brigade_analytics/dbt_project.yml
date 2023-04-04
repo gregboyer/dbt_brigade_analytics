@@ -36,11 +36,11 @@ models :
     # Config indicated by + and applies to all files under models/example/
     staging :
       +schema : staging
-      +materialized : table
     intermediate : 
       +schema : intermediate
     analytics : 
       +schema : analytics
+      +materialized : table
 
       
 

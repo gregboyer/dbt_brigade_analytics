@@ -10,14 +10,14 @@ with source_data as (
         ,att_date
         ,att_volunteer_hours
 
-    from public.stg_airtable_attendance
+    from {{ref('stg_airtable_attendance')}}
 )
 
 ,first_attendance as (
     select
         att_email
         ,max(att_date) att_date
-    from public.stg_airtable_attendance
+    from {{ref('stg_airtable_attendance')}}
     group by att_email
 )
 ,result as (
